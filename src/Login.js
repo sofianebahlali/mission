@@ -1,5 +1,3 @@
-// Login.js
-
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -23,7 +21,9 @@ import GitHubIcon from "@mui/icons-material/GitHub"; // Icône GitHub
 import { AuthContext } from "./AuthContext";
 import { Alert, CircularProgress, Box, Container } from "@mui/material";
 
-// Fonction principale de Login
+// Import de l'image de fond
+import bgImage from "assets/images/bg-sign-in-basic.jpeg"; // Assure-toi que le chemin est correct
+
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -87,9 +87,10 @@ function Login() {
       position="relative"
       zIndex={2}
       sx={{
-        backgroundColor: "#2c3e50", // Couleur sombre pour le fond (bleu foncé)
+        backgroundImage: `url(${bgImage})`, // Image de fond
         backgroundSize: "cover",
         backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Grid
@@ -132,6 +133,8 @@ function Login() {
                     href="https://x.com/KameHouss" // Lien vers Twitter (X)
                     variant="body1"
                     color="white"
+                    target="_blank" // Ouvrir dans un nouvel onglet
+                    rel="noopener noreferrer" // Pour des raisons de sécurité
                   >
                     <TwitterIcon color="inherit" />
                   </MKTypography>
@@ -142,6 +145,8 @@ function Login() {
                     href="https://fr.linkedin.com/in/hosni-saidi-b30b09154" // Lien vers LinkedIn
                     variant="body1"
                     color="white"
+                    target="_blank" // Ouvrir dans un nouvel onglet
+                    rel="noopener noreferrer" // Pour des raisons de sécurité
                   >
                     <LinkedInIcon color="inherit" />
                   </MKTypography>
@@ -152,6 +157,8 @@ function Login() {
                     href="https://github.com/sofianebahlali" // Lien vers GitHub
                     variant="body1"
                     color="white"
+                    target="_blank" // Ouvrir dans un nouvel onglet
+                    rel="noopener noreferrer" // Pour des raisons de sécurité
                   >
                     <GitHubIcon color="inherit" />
                   </MKTypography>

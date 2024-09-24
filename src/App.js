@@ -3,7 +3,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./AuthContext"; // Import du contexte
-// import NavBar from "./NavBar";
 import Login from "./Login";
 import Registration from "./Registration";
 import Welcome from "./Welcome";
@@ -18,6 +17,7 @@ import Parametres from "./Parametres"; // Page Paramètres
 import MesCGV from "./MesCGV"; // Page Mes CGV
 import LettreMission from "./LettreMission"; // Page Lettre de mission
 import theme from "./assets/theme"; // Import du fichier theme.js
+import Home from "./Home"; // Import de la nouvelle page d'accueil
 
 function App() {
   return (
@@ -25,10 +25,12 @@ function App() {
       <CssBaseline />
       <AuthProvider>
         <Router>
-          {/* <NavBar /> */}
           <Routes>
+            {/* Route pour la page d'accueil */}
+            <Route path="/" element={<Home />} />
+
             {/* Route pour la page de connexion */}
-            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
 
             {/* Route pour la page d'inscription */}
             <Route path="/register" element={<Registration />} />
